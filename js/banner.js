@@ -1,3 +1,4 @@
+
 // close banner
 $('.close').click(function(){
     $('.banner>div').hide();
