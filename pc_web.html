@@ -28,6 +28,9 @@
             // swiper
             var swiper = new Swiper('.swiper-container');
 
+            $('.git_hub').click(function(){
+                location.href='https://github.com/eunZero/megabox';
+            });
             
         })
     </script>
@@ -38,12 +41,18 @@
     <style>
         /* #503396 */
         /* skip */
-        .skip{z-index:1;width:100%;height:50px;display:flex;justify-content:center;align-items:center;background:rgb(49, 2, 104);position:absolute;top:-50px;}
+        .skip{z-index:1;width:100%;height:50px;display:flex;justify-content:center;align-items:center;background:rgb(49, 2, 104);position:absolute;top:-50px;width:100%;max-width:2000px;margin:0 auto;}
         .skip>a{border:2px solid transparent;padding:8px 10px;margin:0 5px;color:white;font-weight:500;}
         .skip>a:focus{border:2px solid white;}
 
+        /* git_hub */
+        .git_hub{position:fixed;left:-30px;top:30px;width:150px;padding:5px 0;background:rgb(98, 192, 230);transform:rotate(-45deg);z-index:2;cursor:pointer;}
+        .git_hub p{font-size:12px;color:white;text-align:center;background:skyblue;}
+
         /* wrap */
-        .wrap{position:relative;}
+        .wrap{position:relative;width:100%;max-width:2000px;margin:0 auto;}
+
+        .container{height:100%;}
 
         /* banner */
         .banner01{text-align:center;background:#eee9e3;}
@@ -67,6 +76,17 @@
         .pop_up form label{margin-right:10px;}
         .pop_up form input{margin-right:3px;}
         .pop_up form #close_btn{cursor:pointer;width:16px;text-align:center;border:none;color:#555;margin-right:10px;}
+
+        /* header */
+        .header{height:90px;background:linear-gradient(145deg,#0c0908 10%,#161d2b 60%,#2b1f22 90%);}
+        .header .content{display:flex;flex-flow:row nowrap;justify-content:space-between;align-items:center;}
+        .header .content nav,.header .content div{w}
+
+        /* section */
+        .section{height:1000px;background: rgba(255,0,0,0.2);}
+
+        /* footer */
+        .footer{height:300px;background: rgba(0,255,0,0.2);}
     </style>
 </head> 
 <body>
@@ -75,7 +95,9 @@
         <a href="#section">본문 바로가기</a>
         <a href="#footer">푸터 바로가기</a>
     </div>
-    
+    <div class="git_hub">
+        <p>깃허브로 오세요</p>
+    </div>
     <!-- wrap -->
     <div class="wrap">
         <!-- banner -->
@@ -113,6 +135,49 @@
                 <input type="button" value="X" id="close_btn">
             </form>
         </div>
+        <header class="header">
+            <div class="container">
+                <div class="content">
+                    <nav class="nav01">
+                        <ul class="top_nav">
+                            <li><a href="#" title="VIP LOUNGE">VIP LOUNGE</a></li>
+                            <li><a href="#" title="멤버십">멤버십</a></li>
+                            <li><a href="#" title="고객센터">고객센터</a></li>
+                        </ul>
+                        <ul class="bottom_nav">
+                            <li><a href="#" title="사이트맵"><img src="images/hamburger.png" alt="토글메뉴"></a></li>
+                            <li><a href="#" title="검색"><img src="images/search.png" alt="검색"></a></li>
+                            <li><a href="#" title="영화"><img src="images/gnb-txt-movie.png" alt="영화"></a></li>
+                            <li><a href="#" title="예매"><img src="images/gnb-txt-reserve.png" alt="예매"></a></li>
+                            <li><a href="#" title="극장"><img src="images/gnb-txt-theater.png" alt="극장"></a></li>
+                        </ul>
+                    </nav>
+                    <div class="logo">
+                        <img src="images/white-logo.png" alt="로고">
+                    </div>
+                    <nav class="nav02">
+                        <ul class="top_nav">
+                            <li><a href="#" title="로그인">로그인</a></li>
+                            <li><a href="#" title="회원가입">회원가입</a></li>
+                            <li><a href="#" title="빠른예매">빠른예매</a></li>
+                        </ul>
+                        <ul class="bottom_nav">
+                            <li><a href="#" title="이벤트"><img src="images/gnb-txt-event.png" alt="이벤트"></a></li>
+                            <li><a href="#" title="스토어"><img src="images/gnb-txt-store.png" alt="스토어"></a></li>
+                            <li><a href="#" title="혜택"><img src="images/gnb-txt-benefit.png" alt="혜택"></a></li>
+                            <li><a href="#" title="상영시간표"><img src="images/schedule.png" alt="상영시간표"></a></li>
+                            <li><a href="#" title="나의 메가박스"><img src="images/mymega.png" alt="나의 메가박스"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="section">
+            <div class="container"></div>
+        </section>
+        <footer class="footer">
+            <div class="container"></div>
+        </footer>
     </div>
 </body>
     <script src="js/pop_up_cookie.min.js"></script>
