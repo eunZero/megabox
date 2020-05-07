@@ -1,3 +1,4 @@
+function skip(){
 // skip
 $('.skip>a').focus(function(){
     $(this).parent().css('top','0');
@@ -5,3 +6,4 @@ $('.skip>a').focus(function(){
 $('.skip>a').focusout(function(){
     $(this).parent().css('top','-50px');
 });
+}
