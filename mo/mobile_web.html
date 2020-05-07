@@ -3,9 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제작자 -->
+    <meta name="author" content="sim">
+    <!-- 설명 -->
+    <meta name="description" content="메가박스 사이트 입니다.">
+    <!-- 키워드 -->
+    <meta name="keywords" content="메가박스, megabox, 영화, movie">
+    <!-- 링크공유 -->
+    <meta property="og:title" content="메가박스">
+    <meta property="og:url" content="https://eunZero.github.io/megabox">
+    <meta property="og:img" content="images/og_img.jpg">
+    <meta property="og:description" content="최고의 감동 메가박스와 함께 하세요.">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <!-- jQuery -->
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/swiper.min.js"></script>
+    <!-- Reset -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <script>
+        $(function(){
+            $('#ticket_btn,#alarm_btn').click(function(){
+                var conFirm=confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
+                if(conFirm){
+                    //로그인 폼 보기
+                    alert('아직 로그인폼이 안만들어 졌어요...ㅠㅠㅠ');
+                }
+            });
+            $(window).scroll(function(){
+                var scrTop=$(window).scrollTop();
+                console.log(scrTop);
+                if(scrTop>10){
+                    $('.static_top').css('background-color','rgba(0,0,0,0.8)');
+                }else{
+                    $('.static_top').css('background-color','rgba(0,0,0,0)');
+                }
+
+            });
+        })
+    </script>
     <title>라이프시어터,메가박스</title>
+    <style>
+        .static_top,.static_bottom{box-sizing:border-box;width:100%;position:fixed;left:0;z-index:9999;display:flex;justify-content:space-between;padding:16px;}
+        .static_top{top:0;padding-bottom:6px;transition:0.3s;}
+        .static_top>li:nth-child(1){width:30px;}
+        .static_top>li:nth-child(2){width:110px;margin-top:-10px;}
+        .static_top>li img{width:100%;}
+        .static_top>li:nth-child(3) img{width:30px;text-align:right;}
+
+        .static_bottom{bottom:0;}
+        .wrap{height:1000px;background: slateblue;}
+    </style>
 </head>
 <body>
-    모바일버전
+    <div class="static_menu">
+        <ul class="static_top">
+            <li>
+                <a href="#">
+                    <img id="ticket_btn" src="images/ico-ticket-w.png" alt="ticket">
+                </a>
+            </li>
+            <li>
+                <a href="mobile_web.html">
+                    <img src="images/logo-white.png" alt="logo_white">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img id="alarm_btn" src="images/ico-alarm.png" alt="alarm">
+                    <img id="toggle_btn" src="images/ico-burger-w.png" alt="burger">
+                </a>
+            </li>
+        </ul>
+        <ul class="static_bottom">
+            <li>
+                <a href="#">
+                    <img src="images/ico-bnb-movie.png" alt="movie">
+                    <img src="images/ico-bnb-movie-on.png" alt="movie-on">
+                    <p>영화</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/ico-bnb-store.png" alt="store">
+                    <img src="images/ico-bnb-store-on.png" alt="store-on">
+                    <p>스토어</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/ico-bnb-reserve.png" alt="reserve">
+                    <img src="images/ico-bnb-reserve-on.png" alt="reserve-on">
+                    <p>예매</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/ico-bnb-event.png" alt="event">
+                    <img src="images/ico-bnb-event-on.png" alt="event-on">
+                    <p>이벤트</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/ico-bnb-mymega.png" alt="mymega">
+                    <img src="images/ico-bnb-mymega-on.png" alt="mymega-on">
+                    <p>MY</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap">
+
+    </div>
 </body>
 </html>
