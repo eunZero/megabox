@@ -22,122 +22,28 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <script src="js/swiper.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <!-- my script -->
+    <script src="js/skip.min.js"></script>
+    <script src="js/pop_up_cookie.min.js"></script>
+    <script src="js/banner.min.js"></script>
+    <script src="js/sitemap.min.js"></script>
+    <script src="js/login.min.js"></script>
+    <script src="js/sub_position.min.js"></script>
+    <script src="js/user_slider.min.js"></script>
+    <script src="js/main.js"></script>
     
-    <script>
-        $(function(){
-            // swiper
-            var swiper = new Swiper('.swiper-container');
-
-            $('.git_hub').click(function(){
-                location.href='https://github.com/eunZero/megabox';
-            });
-            
-            
-
-        })
-    </script>
-
-    <link rel="stylesheet" href="css/reset.css">
-
     <title>라이프시어터,메가박스</title>
-    <style>
-        /* #503396 */
-        /* skip */
-        .skip{z-index:1;width:100%;height:50px;display:flex;justify-content:center;align-items:center;background:rgb(49, 2, 104);position:absolute;top:-50px;width:100%;max-width:2000px;margin:0 auto;}
-        .skip>a{border:2px solid transparent;padding:8px 10px;margin:0 5px;color:white;font-weight:500;}
-        .skip>a:focus{border:2px solid white;}
 
-        /* login_form */
-        .login_form{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:3;}
-        .login_form .content{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:500px;height:420px;background:white;}
-        .login_form .login_tit{padding:12px 16px;background:#542faa;}
-        .login_form .login_tit p{float:left;font-size:16px;color:white;}
-        .login_form .login_tit img{float:right;width:16px;cursor:pointer;}
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/movie_chart.css">
+    <link rel="stylesheet" href="css/bonus.css">
+    <link rel="stylesheet" href="css/curation.css">
+    <link rel="stylesheet" href="css/megabox_info.css">
+    <link rel="stylesheet" href="css/bottom_banner.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-        .login_form form{padding:20px;}
-        .login_form form .id_pass{box-sizing:border-box;width:100%;margin-bottom:16px;padding:12px;border-color:#ddd;}
-        .login_form form .id_pass:hover{border-color:black;}
-        .login_form form .id_pass::placeholder{color:#777;}
-        .login_form form input[type="checkbox"],.login_form form label{display:inline-block;margin-bottom:16px;}
-        .login_form form label{color:#444;cursor:pointer;}
-        .login_form form input[type="button"]{width:100%;padding:12px;border:none;border-radius:3px;background:#542faa;font-weight:600;color:white;cursor:pointer;}
-
-        .login_form .login_menu{padding:12px 20px;display:flex;flex-flow:row nowrap;justify-content:center;}
-        .login_form .login_menu li{margin:0 6px;}
-        .login_form .login_menu li:hover{text-decoration:underline;}
-        .login_form .login_menu li a{color:#555;}
-        .login_form .login_menu li:nth-child(2n){width:1px;background:#ddd;}
-
-        .login_form .sns_login{padding:30px 20px;display:grid;grid-template-columns:auto auto auto auto;justify-content:center;grid-column-gap:50px;}
-
-        /* git_hub */
-        .git_hub{position:fixed;left:-30px;top:30px;width:150px;padding:5px 0;background:rgb(98, 192, 230);transform:rotate(-45deg);z-index:5;cursor:pointer;}
-        .git_hub p{font-size:12px;color:white;text-align:center;background:skyblue;}
-
-        /* wrap */
-        .wrap{position:relative;width:100%;max-width:2000px;margin:0 auto;}
-
-        .container{width:1100px;margin:0 auto;}
-
-        /* banner */
-        .banner01{text-align:center;background:#eee9e3;}
-        .banner02{text-align:center;background:#4f79a9;}
-        .banner img{display:inline-block;}
-        .banner .close{position:absolute;right:0;bottom:0;width:20px;height:20px;border:1px solid black;background:rgba(0,0,0,0.8);color:rgba(255, 255, 255, 0.9);font-size:24px;text-align:center;line-height:14px;cursor:pointer;}
-        .banner>div{position:relative;display:none;}
-        .banner>div.active{display:block;}
-
-        /* popUp */
-        .pop_up{position:absolute;left:50%;top:300px;transform:translateX(-50%);z-index:2;
-                box-sizing:border-box;width:400px;height:438px;border-radius:7px;padding-top:30px;text-align:center;background:#ddd;display:none;}
-        .pop_up h3{display:inline-block;width:145px;padding:12px 0;margin-bottom:20px;border-radius:7px;border:1px solid #999;background:#a5a5a5;text-align:center;font-size:20px;font-weight:bold;color:white;}
-        .pop_up hr{margin:20px 6px;height:2px;background:#aeaeae;}
-        .pop_up p,.pop_up strong{font-size:13px;line-height:1.8;}
-        .pop_up p{font-weight:500;}
-        .pop_up ol,.pop_up li{text-align:left;list-style:decimal inside;text-indent:15px;font-size:12px;padding:5px 0;font-weight:500;}
-        .pop_up ol{margin:18px 0;}
-        .pop_up form{display:flex;justify-content:flex-end;align-items:center;margin-top:12px;
-            height:38px;background:#ecf0f4;border-bottom-left-radius:7px;border-bottom-right-radius:7px;color:#555;}
-        .pop_up form label{margin-right:10px;}
-        .pop_up form input{margin-right:3px;}
-        .pop_up form #close_btn{cursor:pointer;width:16px;text-align:center;border:none;color:#555;margin-right:10px;}
-
-        /* header */
-        .header{position:relative;background:linear-gradient(145deg,#0c0908 10%,#161d2b 60%,#2b1f22 90%);}
-        .header>.container>.content{height:90px;display:flex;flex-flow:row nowrap;justify-content:space-between;align-items:center;}
-            /* nav */
-        .top_nav,.bottom_nav{display:flex;flex-flow:row nowrap;}
-        .top_nav{margin-bottom:20px;}
-        .nav02 .top_nav{justify-content:flex-end;}
-        .nav01 .top_nav>li{margin-right:20px;}
-        .nav02 .top_nav>li{margin-left:20px;}
-        .top_nav a{color:#888;font-size:13px;}
-        .nav01 .bottom_nav>li{margin-right:60px;}
-        .nav01 .bottom_nav>li:first-child{margin-right:20px;}
-        .nav02 .bottom_nav>li{margin-left:60px;}
-        .nav02 .bottom_nav>li:last-child{margin-left:20px;}
-        .nav02 #schedule{margin-top:-8px;}
-            /* sitemap */
-        .sitemap{display:none;width:100%;position:absolute;left:0;top:90px;z-index:4;background:rgb(46, 46, 46);}
-        .sitemap .content{padding:50px 0;}
-        .sitemap h2{font-size:22px;color:white;font-weight:normal;margin-bottom:10px;}  
-        #sitemap_btn{cursor:pointer;}
-        .sitemap_menu{display:grid;grid-template-columns:15.15151515% 15.15151515% 15.15151515% 15.15151515% 15.15151515% 15.15151515%;grid-column-gap:20px;grid-row-gap:40px;}
-        .sitemap_menu>li:nth-child(6){grid-column:6;grid-row:1/3;}
-        .sitemap_menu>li>ul>li{color:white;font-size:18px;margin:18px 0;text-align:center;}
-        .sitemap_menu .genre_tit{border-top:1px solid rgba(87, 87, 87, 0.3);border-bottom:1px solid rgba(87, 87, 87, 0.3);padding:12px 0;}
-        .sitemap_menu>li>ul>li>a{color:#bbb;font-size:14px;}
-        .sitemap_menu>li>ul>li>a:hover{text-decoration:underline;color:teal;}
-          
-
-        .sub_nav{display:none;}
-
-        /* section */
-        .section{height:1000px;background: rgba(255,0,0,0.2);}
-
-        /* footer */
-        .footer{height:300px;background: rgba(0,255,0,0.2);}
-    </style>
 </head> 
 <body>
     <!-- skip -->
@@ -191,7 +97,8 @@
                 <div class="close">×</div>
             </div>
         </div>
-        <!-- popUp -->
+
+        <!-- pop_up -->
         <div class="pop_up">
             <h3>예방 수칙 안내</h3>
             <p>
@@ -215,6 +122,8 @@
                 <input type="button" value="X" id="close_btn">
             </form>
         </div>
+
+        <!-- header -->
         <header class="header">
             <div class="container">
                 <div class="content">
@@ -232,7 +141,7 @@
                                         <div class="content">
                                             <h2>SITEMAP</h2>
                                             <ul class="sitemap_menu">
-                                                <li>
+                                                <li>                                                    
                                                     <ul>
                                                         <li class="genre_tit">영화</li>
                                                         <li><a href="#">전체영화</a></li>
@@ -241,32 +150,32 @@
                                                         <li><a href="#">무비포스트</a></li>
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <ul>
-                                                        <li class="genre_tit">예매</li>
+                                                <li>                                                    
+                                                    <ul>             
+                                                        <li class="genre_tit">예매</li>                                           
                                                         <li><a href="#">빠른예매</a></li>
                                                         <li><a href="#">상영시간표</a></li>
                                                         <li><a href="#">더 부티크 프라이빗 예매</a></li>
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <ul>
-                                                        <li class="genre_tit">극장</li>
+                                                <li>                                                    
+                                                    <ul>                    
+                                                        <li class="genre_tit">극장</li>                                    
                                                         <li><a href="#">전체극장</a></li>
                                                         <li><a href="#">특별관</a></li>
                                                     </ul>
                                                 </li>
-                                                <li>
+                                                <li>                                                    
                                                     <ul>
-                                                        <li class="genre_tit">이벤트</li>
+                                                        <li class="genre_tit border_none">이벤트</li>
                                                         <li><a href="#">진행중 이벤트</a></li>
                                                         <li><a href="#">지난 이벤트</a></li>
                                                         <li><a href="#">당첨자발표</a></li>
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <ul>
-                                                        <li class="genre_tit">스토어</li>
+                                                <li>                                                    
+                                                    <ul>                    
+                                                        <li class="genre_tit">스토어</li>                                    
                                                         <li><a href="#">새로운 상품</a></li>
                                                         <li><a href="#">메가티켓</a></li>
                                                         <li><a href="#">메가찬스</a></li>
@@ -335,11 +244,11 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#"><img id="search_btn" src="images/search.png" alt="검색" title="검색"></a>
+                                <a href="#" class="border_none"><img id="search_btn" src="images/search.png" alt="검색" title="검색"></a>
                             </li>
                             <li>
                                 <a href="#" title="영화"><img src="images/gnb-txt-movie.png" alt="영화"></a>
-                                <ul class="sub_nav">
+                                <ul class="sub_nav" id="movie_sub">
                                     <li><a href="#">전체영화</a></li>
                                     <li><a href="#">큐레이션</a></li>
                                     <li><a href="#">무비포스트</a></li>
@@ -347,7 +256,7 @@
                             </li>
                             <li>
                                 <a href="#" title="예매"><img src="images/gnb-txt-reserve.png" alt="예매"></a>
-                                <ul class="sub_nav">
+                                <ul class="sub_nav" id="ticket_sub">
                                     <li><a href="#">빠른예매</a></li>
                                     <li><a href="#">상영시간표</a></li>
                                     <li><a href="#">더 부티크 프라이빗 예매</a></li>
@@ -355,7 +264,7 @@
                             </li>
                             <li>
                                 <a href="#" title="극장"><img src="images/gnb-txt-theater.png" alt="극장"></a>
-                                <ul class="sub_nav">
+                                <ul class="sub_nav" id="thater_sub">
                                     <li><a href="#">전체극장</a></li>
                                     <li><a href="#">특별관</a></li>
                                 </ul>
@@ -374,45 +283,741 @@
                         <ul class="bottom_nav">
                             <li>
                                 <a href="#" title="이벤트"><img src="images/gnb-txt-event.png" alt="이벤트"></a>
-                                <ul class="sub_nav">
+                                <ul class="sub_nav" id="event_sub">
                                     <li><a href="#">진행중인 이벤트</a></li>
                                     <li><a href="#">지난 이벤트</a></li>
                                     <li><a href="#">당첨자발표</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" title="스토어"><img src="images/gnb-txt-store.png" alt="스토어"></a>
+                                <a href="#" title="스토어" class="border_none"><img src="images/gnb-txt-store.png" alt="스토어"></a>
                             </li>
                             <li>
                                 <a href="#" title="혜택"><img src="images/gnb-txt-benefit.png" alt="혜택"></a>
-                                <ul class="sub_nav">
+                                <ul class="sub_nav" id="service_sub">
                                     <li><a href="#">메가박스 멤버십</a></li>
                                     <li><a href="#">제휴/할인</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" title="상영시간표"><img id="schedule" src="images/schedule.png" alt="상영시간표"></a>
+                                <a href="#" title="상영시간표" class="border_none"><img id="schedule" src="images/schedule.png" alt="상영시간표"></a>
                             </li>
                             <li>
-                                <a href="#" title="나의 메가박스"><img src="images/mymega.png" alt="나의 메가박스"></a>
+                                <a href="#" title="나의 메가박스" class="border_none"><img src="images/mymega.png" alt="나의 메가박스"></a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
+
+        <!-- section -->
+            <!-- movie_chart -->
         <section class="section">
-            <div class="container"></div>
+            <div class="container">
+                <article class="article movie_chart">
+                    <div class="content">
+                        <h2>
+                           <a href="#">박스오피스</a>
+                        </h2>
+                        <!-- Swiper -->
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slide01">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img01.jpg" alt="poster01">
+                                            <p class="poster_number">1</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    팝, 록, 클래식, 컨츠리, 펑크 , 테크노, K-POP까지<br>
+                                                    세상의 모든 음악이 쏟아진다!<br>
+                                                    노래와 춤을 즐기며 평화로운 나날을 보내던 팝 트롤 ‘파피’와 ‘브랜치’ 그리고 친구들.<br>
+                                                    어느 날 ‘파피’는 자신들 외에도
+                                                </p>
+                                                <p>관람평<span>9.1</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>601</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide02">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img02.jpg" alt="poster02">
+                                            <p class="poster_number">2</p>
+                                            <div class="poster_txt">
+                                                <p>                                                    
+												    어렸을 때부터 함께 경극을 해온 ‘두지’(장국영)와 ‘시투’(장풍의).<br>
+                                                    세상에 둘도 없는 절친한 아우와 형이지만,<br>
+                                                    ‘두지’는 남몰래 ‘시투’에 대한 마음을 품고 있다.
+                                                </p>
+                                                <p>관람평<span>9.6</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>781</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide03">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img03.jpg" alt="poster03">
+                                            <p class="poster_number">3</p>
+                                            <div class="poster_txt">
+                                                <p>                                                    
+													김수환 추기경의 어린 시절 이야기<br>
+                                                    “내 마음밭 특별한 씨앗을 키운 건, 가족의 사랑이었다”!<br>
+                                                    1928년 일제강점기, 세상에서 가장 사랑하는 엄마와 아픈 아버지를 위해
+                                                </p>
+                                                <p>관람평<span>8.4</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>70</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide04">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img04.jpg" alt="poster04">
+                                            <p class="poster_number">4</p>
+                                            <div class="poster_txt">
+                                                <p>                                                    
+													황홀한 사랑, 순수한 희망, 격렬한 열정… <br>
+                                                    이 곳에서 모든 감정이 폭발한다!<br>
+                                                    꿈을 꾸는 사람들을 위한 별들의 도시 ‘라라랜드’. 재즈 피아니스트 ‘세바스찬’(라이언 고슬링)과 배우 지망생 ‘미아’(엠마 스톤), 
+                                                </p>
+                                                <p>관람평<span>9.5</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>12k</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide05">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img05.jpg" alt="poster05">
+                                            <p class="poster_number">5</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    동생을 맡기기 위해 호텔 레이크를 찾아간 ‘유미’
+                                                    두 자매를 가족처럼 반기는 호텔 레이크 사장 ‘경선’
+                                                    이상한 이야기만 늘어 놓는 유일한 메이드 ‘예린’
+                                                    호텔 레이크에서는
+                                                    절대 위를 올려다보지 말 것
+                                                    절대 혼자 돌아다니지 
+                                                </p>
+                                                <p>관람평<span>6.5</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>106</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide06">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img06.jpg" alt="poster06">
+                                            <p class="poster_number">6</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    인피니티 워 이후 절반만 살아남은 지구 
+                                                    마지막 희망이 된 어벤져스 
+                                                    먼저 떠난 그들을 위해 모든 것을 걸었다! 
+
+                                                    위대한 어벤져스
+                                                    운명을 바꿀 최후의 전쟁이 펼쳐진다! 
+                                                </p>
+                                                <p>관람평<span>9.3</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>22.1k</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide07">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img07.jpg" alt="poster07">
+                                            <p class="poster_number">7</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    두 명의 병사, 하나의 미션!
+                                                    그들이 싸워야 할 것은 적이 아니라 시간이었다!
+                                                    
+                                                    제1차 세계대전이 한창인 1917년.
+                                                    독일군에 의해 모든 통신망이 파괴된 상황 속에서
+                                                    영국군 병사 '스코필드'(조지 맥케이)와 '블레이크'(딘-찰스
+                                                </p>
+                                                <p>관람평<span>8.9</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>13k</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide08">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img08.jpg" alt="poster08">
+                                            <p class="poster_number">8</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    흥행 로코 제작진의 2020 본격 첫사랑 로코
+                                                    우리의 시간은 지금부터가 진짜야!
+
+                                                    모범생 ‘팡위커’와 유독 그에게만 빛나 보이는 ‘린린’이
+                                                    어린 시절 동네 친구에서 연인이 되기까지의
+                                                    새콤달콤한 여정을 담은 로맨스 일대기
+                                                </p>
+                                                <p>관람평<span>7.3</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>263</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide09">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img09.jpg" alt="poster09">
+                                            <p class="poster_number">9</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    “폐 끼치고 싶진 않았어요”
+
+                                                    전원백수로 살 길 막막하지만 사이는 좋은 기택(송강호) 가족.
+                                                    장남 기우(최우식)에게 명문대생 친구가 연결시켜 준 고액 과외 자리는
+                                                    모처럼 싹튼 고정수입의 희망이다.
+                                                    온 가족의 도움과 기대
+                                                </p>
+                                                <p>관람평<span>9.4</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>282</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide10">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img10.jpg" alt="poster10">
+                                            <p class="poster_number">10</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    모든 것을 마주하게 된 그날의 결혼식, 그리고 운명적 만남!
+                                                    인도에서 아동 재단을 운영 중인 ‘이자벨’(미셸 윌리엄스)은 
+                                                    세계적 미디어 그룹 대표 ‘테레사’(줄리안 무어)로부터 거액의 후원을 제안받는다.
+                                                    단, ‘이자벨’이
+                                                </p>
+                                                <p>관람평<span>8.2</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>173</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide11">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img11.jpg" alt="poster11">
+                                            <p class="poster_number">11</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    새로운 조합을 이룬 어벤져스, 
+                                                    역대 최강 빌런 타노스에 맞서 세계의 운명이 걸린 
+                                                    인피니티 스톤을 향한 무한 대결이 펼쳐진다! 
+                                                    
+                                                    4월, 마블의 클라이맥스를 목격하라!
+                                                </p>
+                                                <p>관람평<span>9.4</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>4k</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide slide12">
+                                    <ul>
+                                        <li class="poster">
+                                            <img src="images/mov_img12.jpg" alt="poster12">
+                                            <p class="poster_number">12</p>
+                                            <div class="poster_txt">
+                                                <p>
+                                                    세월호는 왜 침몰했는가? 다큐팀은 <그날, 바다>에 담지 못했던 
+                                                    조작 의혹을 새로 출범한 특별조사위원회에 전달하기 위해 자료를 정리하다가, 
+                                                    상상도 못한 데이터 조작의 증거들을 발견한다.
+                                                </p>
+                                                <p>관람평<span>9.2</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="poster_btn clearfix">
+                                            <div><span>하트</span>184</div>
+                                            <div>예매</div>
+                                        </li>
+                                    </ul>
+                                </div>                                
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <ul class="quick_movie_menu">
+                            <li>
+                                <input type="text" placeholder="영화명을 입력해주세요">
+                            </li>
+                            <li>
+                                <a href="#">상영시간표</a>
+                            </li>
+                            <li>
+                                <a href="#">박스오피스</a>
+                            </li>
+                            <li>
+                                <a href="#">빠른예매</a>
+                            </li>
+                        </ul>
+                        <div class="mouse_ani">
+                            <img src="images/ico-mouse.png" alt="ico-mouse">
+                        </div>
+                    </div>
+                </article>                
+            </div>
         </section>
+            <!-- bonus -->
+        <section class="section bonus">
+            <div class="container">
+                <article class="article art_banner">
+                    <h3>혜택</h3>
+                    <div class="content grid_par">
+                        <div id="grid_child01">
+                            <div class="img00 active">
+                                <img src="images/bonus00.jpg" alt="보너스00">
+                            </div>
+                            <div class="img01">
+                                <img src="images/bonus01.jpg" alt="보너스01">
+                            </div>
+                            <div class="img02">
+                                <img src="images/bonus02.jpg" alt="보너스02">
+                            </div>
+                            <div class="img03">
+                                <img src="images/bonus03.jpg" alt="보너스03">
+                            </div>
+                            <ul>
+                                <li id="img_bar">
+                                    <div class="img_bar_par">
+                                        <div class="active">1</div>
+                                        <div>2</div>
+                                        <div>3</div>
+                                        <div>4</div>
+                                    </div>
+                                </li>
+                                <li id="img_btn">
+                                    <span id="prev"><img src="images/btn-prev.png" alt="prev">&nbsp;&nbsp;</span>
+                                    <span id="next"><img src="images/btn-next.png" alt="next"></span>
+                                </li>
+                                <li id="img_num">
+                                    <span id="page">1</span>
+                                    <span>&nbsp;/&nbsp;</span>
+                                    <span id="pages">4</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="grid_child02">
+                            <div class="img00 active">
+                                <img src="images/bonus_right00.jpg" alt="보너스00">
+                            </div>
+                            <div class="img01">
+                                <img src="images/bonus_right01.jpg" alt="보너스01">
+                            </div>
+                            <div class="img02">
+                                <img src="images/bonus_right02.jpg" alt="보너스02">
+                            </div>
+                            <div class="img03">
+                                <img src="images/bonus_right03.jpg" alt="보너스03">
+                            </div>
+                        </div>
+                        <div id="grid_child03">
+                            <img src="images/bonus_banner00.jpg" alt="보너스배너00">
+                        </div>
+                        <div id="grid_child04">
+                            <img src="images/bonus_banner01.jpg" alt="보너스배너01">
+                        </div>
+                        <div id="grid_child05">
+                            <img src="images/bonus_banner02.jpg" alt="보너스배너02">
+                        </div>
+                    </div>
+                </article>
+                <article class="article bonus_quick_menu">
+                    <ul class="content ico_par clearfix">
+                        <li>
+                            <a href="#">
+                                <img src="images/ico-bonus00.png" alt="보너스아이콘00">
+                                <p>VIP LOUNGE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/ico-bonus01.png" alt="보너스아이콘01">
+                                <p>멤버십</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/ico-bonus02.png" alt="보너스아이콘02">
+                                <p>할인카드안내</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/ico-bonus03.png" alt="보너스아이콘03">
+                                <p>이벤트</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/ico-bonus04.png" alt="보너스아이콘04">
+                                <p>스토어</p>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+                <article class="article grand_open">
+                    <div class="content clearfix">
+                        <div class="grand_txt">
+                            <p>LIFE THEATER MEGABOX</p>
+                            <h3>GRAND<br>OPENING</h3>
+                            <hr>
+                        </div>
+                        <div class="grand_img">
+                            <div>
+                                <img src="images/bg-theater-new.jpg" alt="그랜드오픈">
+                            </div>
+                            <div>
+                                화이트
+                            </div>
+                            <div>
+                                <p class="open_tit">신규오픈</p>
+                                <p class="open_sec1">경기</p>
+                                <p class="open_sec2">용인기흥</p>
+                                <p class="open_date">2020.05.14</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+            <!-- curation -->
+        <section class="curation">
+            <div class="container">
+                <div class="content">
+                    <div class="tit">
+                        <h2>큐레이션</h2>
+                        <p><span>큐레이션 더보기</span><span> +</span></p>
+                    </div>
+                    <div class="curation_content">
+                        <div class="curation_left">
+                            <div class="left_img">
+                                <img src="images/mov_img03.jpg" alt="라라랜드">
+                            </div>
+                            <div class="left_btn clearfix">
+                                <p class="view">상세보기</p>
+                                <p class="ticket">예매</p>
+                            </div>
+                            <div class="left_over">
+                                <div class="left_over_txt">
+                                    <h4>
+                                        MEGABOX<br>
+                                        FILM<br>
+                                        SOCIETY
+                                    </h4>
+                                    <div class="left_over_base">
+                                        삼각형
+                                    </div>
+                                </div>
+                                <!-- <img src="images/bg-film.png" alt=""> -->
+                            </div>
+                        </div>
+                        <div class="curation_right">
+                            <h3>#필름소사이어티</h3>
+                            <h2>라라랜드</h2>
+                            <hr>
+                            <p>황홀한 사랑, 순수한 희망, 격렬한 열정…</p>
+                            <p>
+                                이 곳에서 모든 감정이 폭발한다!<br>
+                                꿈을 꾸는 사람들을 위한 별들의 도시 ‘라라랜드’. 재즈 피아니스트 ‘세바스찬’(라이언 고슬링)과 배우 지망생 ‘미아’(엠마 스톤), 인생에서 가장 빛나는 순간 만난 두 사람은 미완성인 서로의 무대를 만들어가기 시작한다.
+                            </p>
+                            <ul class="curation_poster">
+                                <li>
+                                    <div class="curation_poster_img">
+                                        <img src="images/curation_poster00.jpg" alt="poster00">
+                                    </div>
+                                    <div class="curation_poster_txt">
+                                        <p>레이니 데이 인 뉴욕</p>
+                                    </div>
+                                    <div class="curation_poster_over">
+                                        <p class="f_color">F</p>
+                                        <p></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="curation_poster_img">
+                                        <img src="images/curation_poster01.jpg" alt="poster01">
+                                    </div>
+                                    <div class="curation_poster_txt">
+                                        <p>패왕별희 디 오리지널</p>
+                                    </div>
+                                    <div class="curation_poster_over">
+                                        <p class="f_color">F</p>
+                                        <p></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="curation_poster_img">
+                                        <img src="images/curation_poster02.jpg" alt="poster02">
+                                    </div>
+                                    <div class="curation_poster_txt">
+                                        <p>[오페라] 리골레토</p>
+                                    </div>
+                                    <div class="curation_poster_over">
+                                        <p class="c_color">C</p>
+                                        <p class="c_border"></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="curation_poster_img">
+                                        <img src="images/curation_poster03.jpg" alt="poster03">
+                                    </div>
+                                    <div class="curation_poster_txt">
+                                        <p>[오페라] 마담 버터플라이···</p>
+                                    </div>
+                                    <div class="curation_poster_over">
+                                        <p class="c_color">C</p>
+                                        <p class="c_border"></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- megabox_info -->
+        <section class="megabox_info">
+            <article>
+                <div class="container">
+                    <div class="content">
+                        <h2>메가박스 안내</h2>
+                        <ul class="megabox_info_img">
+                            <li>
+                                <a href="#">
+                                    <img src="images/megainfo00.png" alt="megainfo00">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/megainfo01.png" alt="megainfo01">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/megainfo02.png" alt="megainfo02">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/megainfo03.png" alt="megainfo03">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/megainfo04.png" alt="megainfo04">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="content">
+                        <ul class="notice">
+                            <li>
+                                <p>지점</p>
+                            </li>
+                            <li class="clearfix">
+                                <p style="float:left;">
+                                    <a href="#">
+                                        <span class="notice_color">[일산벨라시타]</span>
+                                        <span>5월 방역작업에 따른 정기 휴점 안내</span>
+                                    </a>
+                                </p>
+                                <p style="float:right;" class="notice_date">2020.05.06</p>
+                            </li>
+                            <li>
+                                <a href="#">더보기 ></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <div class="content">
+                        <ul class="megabox_info_quicknav">
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo00.png" alt="megainfo00">
+                                    <p>고객센터</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo01.png" alt="megainfo01">
+                                    <p>자주 묻는 질문</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo02.png" alt="megainfo02">
+                                    <p>1:1 문의</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo03.png" alt="megainfo03">
+                                    <p>단체/대관문의</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo04.png" alt="megainfo04">
+                                    <p>분실물 문의/접수</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/ico-megainfo05.png" alt="megainfo05">
+                                    <p>더 부티크 프라이빗<br>대관예매</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- bottom_banner -->
+        <section class="bottom_banner">
+            <img src="images/bottom_banner.jpg" alt="bottom_banner">
+        </section>
+
+        <!-- footer -->
         <footer class="footer">
-            <div class="container"></div>
+            <div class="container">
+                <div class="content clearfix">
+                    <div class="footer_left" style="float:left;">
+                        <ul class="footer_nav">
+                            <li>
+                                <a href="#" title="회사소개 페이지로 이동">회사소개</a>
+                            </li>
+                            <li>
+                                <a href="#" title="인재채용 페이지로 이동">인재채용</a>
+                            </li>
+                            <li>
+                                <a href="#" title="사회공헌 페이지로 이동">사회공헌</a>
+                            </li>
+                            <li>
+                                <a href="#" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a>
+                            </li>
+                            <li>
+                                <a href="#" title="이용약관 페이지로 이동">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="#" title="개인정보처리방침 페이지로 이동"><strong>개인정보처리방침</strong></a>
+                            </li>
+                            <li>
+                                <a href="#" title="윤리경영 페이지로 이동">윤리경영</a>
+                            </li>
+                        </ul>
+                        <div class="footer_bottom">
+                            <div class="footer_log">
+                                <img src="images/logo-opacity.png" alt="logo">
+                            </div>
+                            <address>
+                                <p>
+                                    서울특별시 성동구 왕십리로 50, 6층(성수동 1가, 메가박스스퀘어) ARS 1544-0070<br>
+                                    대표자명 김진선 · 개인정보보호책임자 조상연 · 사업자등록번호 211-86-59478 · 통신판매업신고번호 제 833호<br>
+                                    COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved
+                                </p>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="footer_right" style="float:right;">
+                        <div class="footer_search">
+                            <a href="#">
+                                <img src="images/ico-footer-search.png" alt="search">
+                                극장찾기
+                            </a>
+                        </div>
+                        <ul class="footer_sns">
+                            <li>
+                                <a href="#" title="MEGABOX 트위터 페이지로 이동">
+                                    <img src="images/ico-footer00.png" alt="twiter">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="MEGABOX 페이스북 페이지로 이동">
+                                    <img src="images/ico-footer01.png" alt="facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="MEGABOX 인스타그램 페이지로 이동">
+                                    <img src="images/ico-footer02.png" alt="instagram">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="MEGABOX 구글플레이 페이지로 이동">
+                                    <img src="images/ico-footer03.png" alt="google play">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="MEGABOX 앱스토어 페이지로 이동">
+                                    <img src="images/ico-footer04.png" alt="appstore">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
-    <!-- my script -->
-    <script src="js/skip.min.js"></script>
-    <script src="js/pop_up_cookie.min.js"></script>
-    <script src="js/banner.min.js"></script>
-    <script src="js/sitemap.min.js"></script>
-    <script src="js/login.min.js"></script>
+<script>
+    main();
+</script>
 </html>
